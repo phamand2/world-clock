@@ -1,0 +1,27 @@
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: relative;
+}
+
+.button{
+  padding: 10px 10px;
+  border: none;
+  margin-left: 8px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.timezone {
+  width: 500px;
+  justify-content: center;
+}
+
+.clock{
+  position: absolute;
+  top: 150px;
+}
+

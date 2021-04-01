@@ -1,35 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import TimezoneSelect from "react-timezone-select";
+import Clock from "./Clock";
+import styles from "./Form.module.css";
 
-
-
-
-const Form = () => {
-
-  const [value, setValue] = useState(['us','uk','london'])
-  const [country, setCountry] = useState('')
+const Form = (props) => {
+  const [timezone, setTimezone] = useState("");
+  console.log(props.timezones)
 
   const handleSubmit = (e) => {
-    e.prevent.default()
-    console.log('it work')
-  }
+    e.preventDefault();
+    props.setTimezones([...props.timezones, timezone])
+  };
 
-  const handleChange = (e) => {
-    console.log(e.target.value)
-    setCountry(e.target.value)
-  }
+  const tzExists = props.timezones.find((tz)=>{
+    return tz.value === timezone.value
+  })
+
 
   return (
-    <div>
+    <div className={styles.form}>
       <form onSubmit={handleSubmit}>
-        <select name={value} id="">
-          {value.map((timezone,index) => (
-            <option onChange={(e) => handleChange(e)} key={index} value={timezone}>{timezone}</option>
-          ))}
-        </select>
-        <button type='submit'>Submit</button>
+        <TimezoneSelect
+          className={styles.timezone}
+          value={timezone}
+          onChange={setTimezone}
+        />
       </form>
+      <form onSubmit={handleSubmit}>
+        <button disabled={tzExists} className={styles.button} type="submit">Save</button>
+      </form>
+      <div className={styles.clock}>
+        {timezone && <Clock timezone={timezone}/>}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
