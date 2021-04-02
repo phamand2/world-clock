@@ -5,7 +5,7 @@ import styles from  './Homepage.module.css'
 
 const Homepage = (props) => {
 
-  console.log('Homepage.JS RENDERING')
+  // console.log('Homepage.JS RENDERING')
 
   return (
     <div className={styles.container}>

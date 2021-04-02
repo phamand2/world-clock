@@ -6,7 +6,7 @@ const TimeZones = (props) => {
 
   const [data, setData] = useState()
 
-  console.log('TimeZones.JS RENDERING')
+  // console.log('TimeZones.JS RENDERING')
 
   const fetchStorage = () =>  {
     const getData = JSON.parse(localStorage.getItem('myTimezones'))

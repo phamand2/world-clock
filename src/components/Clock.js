@@ -7,7 +7,7 @@ const Clock = (props) => {
 
   const [time, setTime] = useState({})
 
-  console.log('Clock.JS RENDERING')
+  // console.log('Clock.JS RENDERING')
 
 
   let options = {
@@ -15,7 +15,7 @@ const Clock = (props) => {
     width: "300px",
     border: true,
     borderColor: "#2e2e2e",
-    baseColor: "#000202",
+    baseColor: "#589a9a",
     centerColor: "#85e103",
     centerBorderColor: "#fff",
     handColors: {
@@ -48,8 +48,8 @@ useEffect(() => {
 
   const interval = setInterval(() => {
     updateClock();
-    console.log('Updating clock at 1s')
-  }, 1000);
+    // console.log('Updating clock at 60s')
+  }, 60000);
   return () => {
     // console.log('Clear Interval')
     clearInterval(interval);

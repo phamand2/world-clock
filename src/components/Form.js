@@ -5,7 +5,7 @@ import styles from "./Form.module.css";
 
 const Form = (props) => {
   const [timezone, setTimezone] = useState("");
-  console.log('Form.JS RENDERING')
+  // console.log('Form.JS RENDERING')
 
   const handleSubmit = (e) => {
     e.preventDefault();
