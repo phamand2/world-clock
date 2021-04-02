@@ -7,6 +7,9 @@ const Clock = (props) => {
 
   const [time, setTime] = useState({})
 
+  console.log('Cock.JS RENDERING')
+
+
   let options = {
     useCustomTime: true,
     width: "300px",
@@ -58,5 +61,6 @@ useEffect(() => {
     </div>
   )
 }
+
 
 export default Clock
