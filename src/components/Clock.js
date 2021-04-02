@@ -48,11 +48,13 @@ useEffect(() => {
 
   const interval = setInterval(() => {
     updateClock();
+    // console.log('Updating clock at 1s')
   }, 1000);
   return () => {
+    // console.log('Clear Interval')
     clearInterval(interval);
   };
-}, [props.timezone.value]);
+}, [props.timezone.value, time]);
 
 
   return (

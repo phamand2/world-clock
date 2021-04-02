@@ -10,6 +10,10 @@ const TimeZones = (props) => {
 
   const fetchStorage = () =>  {
     const getData = JSON.parse(localStorage.getItem('myTimezones'))
+
+    // Fix Re-rendering with a check if the array is empty
+    // console.log(getData)
+    // if (getData.length === 0) return
     setData(getData)
   }
 
@@ -18,9 +22,9 @@ const TimeZones = (props) => {
   },[data])
 
   const removeTimezone = (timezone) => {
-    const removeItem = props.setTimezones(data.filter((tz,index) => {
-      return timezone.value !== tz.value
-    }))
+    // const removeItem = props.setTimezones(data.filter((tz,index) => {
+    //   return timezone.value !== tz.value
+    // }))
     
     const myData = JSON.parse(localStorage.getItem("myTimezones"));
     myData.splice(0,1);

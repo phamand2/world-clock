@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect } from "react";
 import { Route, Switch } from "react-router";
 import Homepage from "./containers/Homepage";
 import TimeZones from "./containers/TimeZones";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [timezones, setTimezones] = useLocalStorage('myTimezones', null);
+  const [timezones, setTimezones] = useLocalStorage('myTimezones', []);
 
   
 
