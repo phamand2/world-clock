@@ -9,9 +9,9 @@ function App() {
 
   
 
-  useEffect(()=>{
-    localStorage.setItem('myTimezones', JSON.stringify(timezones))
-  },[timezones])
+  // useEffect(()=>{
+  //   localStorage.setItem('myTimezones', JSON.stringify(timezones))
+  // },[timezones])
 
   console.log('App.JS RENDERING')
 
