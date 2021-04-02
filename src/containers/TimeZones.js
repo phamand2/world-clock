@@ -12,8 +12,7 @@ const TimeZones = (props) => {
     const getData = JSON.parse(localStorage.getItem('myTimezones'))
 
     // Fix Re-rendering with a check if the array is empty
-    // console.log(getData)
-    // if (getData.length === 0) return
+    if (getData.length === 0) return
     setData(getData)
   }
 
