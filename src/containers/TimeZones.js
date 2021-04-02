@@ -21,14 +21,14 @@ const TimeZones = (props) => {
   },[data])
 
   const removeTimezone = (timezone) => {
-    // const removeItem = props.setTimezones(data.filter((tz,index) => {
-    //   return timezone.value !== tz.value
-    // }))
+    props.setTimezones(data.filter((tz,index) => {
+      const myData = JSON.parse(localStorage.getItem("myTimezones"));
+      myData.splice(0,1);
+      setData(localStorage.setItem("myTimezones",JSON.stringify(myData)));
+      fetchStorage()
+      return timezone.value !== tz.value
+    }))
     
-    const myData = JSON.parse(localStorage.getItem("myTimezones"));
-    myData.splice(0,1);
-    setData(localStorage.setItem("myTimezones",JSON.stringify(myData)));
-    fetchStorage()
   }
 
   const clock = data?.map((tz,index) => {

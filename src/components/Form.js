@@ -12,7 +12,11 @@ const Form = (props) => {
     props.setTimezones([...props.timezones, timezone])
   };
 
-  const tzExists = props.timezones.find((tz)=>{
+  // const tzExists = props.timezones.find((tz)=>{
+  //   return tz.value === timezone.value
+  // })
+
+  const tzExists = JSON.parse(localStorage.getItem('myTimezones')).find((tz)=>{
     return tz.value === timezone.value
   })
 

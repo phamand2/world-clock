@@ -49,7 +49,7 @@ useEffect(() => {
   const interval = setInterval(() => {
     updateClock();
     // console.log('Updating clock at 60s')
-  }, 60000);
+  }, 1000);
   return () => {
     // console.log('Clear Interval')
     clearInterval(interval);
